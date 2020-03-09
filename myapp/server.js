@@ -1,28 +1,49 @@
 const express = require('express')
 const fetch = require('node-fetch')
-const ejs = require('ejs')
 
 const app = express()
+const port = 3000
 
-app.get('/', async function (req, res) {
-    const endpoint = 'https://zoeken.oba.nl/api/v1/search/?q='
-    const query = 'dieren'
-    const key = '1e19898c87464e239192c8bfe422f280'
-    const secret = '4289fec4e962a33118340c888699438d'
-    const detail = 'Default'
-    const url = `${endpoint}${query}&authorization=${key}&detaillevel=${detail}&output=json`
-    const config = {
-        Authorization: `Bearer ${secret}`
-    }
+app.use(express.static('static'))
 
-    fetch(url, config)
-        .then(response => response)
-        .then(data => console.log(JSON.parse(data)))
-        .catch(err => console.log(err))
+app.set('view engine', 'ejs');
+app.set('views', 'templates');
 
-    // const response = await fetch(url, config)
-    // const data = await response.json()
+const apikey = `ebc313f38232bfbdaa36ea5a11721c5f`
 
+app.get('/', async (req, res) => {
+    const response = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}`)
+    const data = await response.json()
+    const genres = data.genres
+
+    res.render('home', {
+        title: 'Genres',
+        genres
+    })
 })
 
-app.listen(3000)
+app.get('/genre/:id', async (req, res) => {
+    const response = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&sort_by=popularity.desc&page=1&with_genres=${req.params.id}`)
+    const data = await response.json()
+    const movies = data.results
+
+    res.render('movies', {
+        title: 'Naam',
+        movies
+    })
+})
+
+app.get('/movie/:id', async (req, res) => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${apikey}&language=en-US`)
+    const data = await response.json()
+    const movie = data
+
+    console.log(movie)
+
+    res.render('movie', {
+        title: 'Naam',
+        movie
+    })
+})
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))

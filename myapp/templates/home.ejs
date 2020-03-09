@@ -1,0 +1,19 @@
+<html>
+
+<body>
+
+    <h1><%= title %></h1>
+
+    <% genres.forEach(genre => { %>
+
+    <article>
+        <a href="/genre/<%= genre.id %>">
+            <p><%= genre.name %></p>
+        </a>
+    </article>
+
+    <% }) %>
+
+</body>
+
+</html>
