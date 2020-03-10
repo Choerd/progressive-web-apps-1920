@@ -1,19 +1,19 @@
-<html>
+<%- include ('../components/head') %>
 
-<body>
+<main>
+    <ul movie-list>
 
-    <h1><%= title %></h1>
+        <% genres.forEach(genre => { %>
 
-    <% genres.forEach(genre => { %>
+        <li>
+            <a href="/genre/<%= genre.id %>">
+                <p><%= genre.name %></p>
+            </a>
+        </li>
 
-    <article>
-        <a href="/genre/<%= genre.id %>">
-            <p><%= genre.name %></p>
-        </a>
-    </article>
+        <% }) %>
 
-    <% }) %>
+    </ul>
+</main>
 
-</body>
-
-</html>
+<%- include ('../components/footer') %>
