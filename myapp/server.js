@@ -12,22 +12,26 @@ app.set('views', 'templates');
 const apikey = `ebc313f38232bfbdaa36ea5a11721c5f`
 
 app.get('/', async (req, res) => {
-    const data = await fetcher(`https://api.themoviedb.org/3/genre/movie/list?api_key=${apikey}`)
-    const genres = data.genres
+    const best_movie = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}`
+    const popular_movies = `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}`
+    const upcoming_movies = `https://api.themoviedb.org/3/movie/upcoming?api_key=${apikey}`
+
+    const queries = Promise.all([
+        await fetcher(best_movie),
+        await fetcher(popular_movies),
+        await fetcher(upcoming_movies)
+    ])
+    const data = await queries
+
+    const movieid = data[0].results[0].id
+    const movie = fetcher(`https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=${apikey}`)
+    const best_movie_video = await movie
 
     res.render('home', {
-        title: 'Genres',
-        genres
-    })
-})
-
-app.get('/genre/:id', async (req, res) => {
-    const data = await fetcher(`https://api.themoviedb.org/3/discover/movie?api_key=${apikey}&sort_by=popularity.desc&page=1&with_genres=${req.params.id}`)
-    const movies = data.results
-
-    res.render('movies', {
-        title: 'Categorie',
-        movies
+        best_movie: data[0].results[0],
+        best_movie_video: best_movie_video,
+        popular_movies: data[1].results,
+        upcoming_movies: data[2].results
     })
 })
 
