@@ -1,17 +1,18 @@
 <%- include ('../components/head') %>
 
-<main>
-    <h1><%= title %></h1>
+<h1><%= title %></h1>
 
-    <ul movie-list>
+<main>
+    <ul>
 
         <% movies.forEach(movie => { %>
 
-        <a href="/movie/<%= movie.id %>">
-            <li>
-                <img src="https://image.tmdb.org/t/p/w300/<%= movie.poster_path %>">
-            </li>
-        </a>
+        <li>
+            <a href="/movie/<%= movie.id %>">
+                <p><%= movie.original_title %></p>
+                <img src="https://image.tmdb.org/t/p/w200/<%= movie.poster_path %>">
+            </a>
+        </li>
 
         <% }) %>
 
