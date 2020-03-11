@@ -2,20 +2,84 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-family: Avenir, Arial, Helvetica, sans-serif;
 }
 
-body {
-    font-family: Avenir, Arial, Helvetica, sans-serif;
+*:hover {
+    cursor: default;
 }
 
 header, footer {
     width: 100vw;
+    background-color: rgb(20, 20, 20);
+    padding: 20px 50px;
+    font-size: max(1vw, 18px);
 }
 
-header nav ul li {
-    color: red;
+header *, footer * {
+    color: #e5e5e5;
+    font-weight: 500;
 }
 
-/* footer {
+header a:hover, footer a:hover {
+    cursor: pointer;
+}
 
-} */
+main {
+    padding: 5vh 0vw;
+    background-color: rgb(20, 20, 20);
+}
+
+main > h1 {
+    margin-bottom: 2vh;
+    text-align: center;
+    color: #e5e5e5;
+} 
+
+main > section {
+    margin-left: 5vw;
+}
+
+section h3 {
+    color: #e5e5e5;
+}
+
+/* Horizontal movies overview */
+ul[movie-list-horizontal] {
+    width: 95vw;
+    overflow: scroll;
+    position: relative;
+    display: flex;
+    padding: 15px 0vw;
+    margin-bottom: 5vh;
+}
+
+ul[movie-list-horizontal]:after {
+    margin-left: 5vw;
+    color: transparent;
+    height: max-content;
+    content: '_';
+}
+
+ul[movie-list-horizontal] a {
+    margin: 0px 2px;
+}
+ul[movie-list-horizontal] a li img {
+    transform: translate(0px, 0px);
+    width: 200px;
+    height: 300px;
+    transition: width .3s, height .3s;
+}
+
+ul[movie-list-horizontal] li {
+    height: 300px;
+}
+
+ul[movie-list-horizontal] a:hover li img {
+    transform: translate(0px, -15px);
+    width: 220px;
+    height: 330px;
+}

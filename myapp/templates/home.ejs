@@ -1,19 +1,11 @@
 <%- include ('../components/head') %>
 
 <main>
-    <ul movie-list>
 
-        <% genres.forEach(genre => { %>
+    <%- include ('../components/hot-movie') %>
+    <%- include ('../components/movielist', { results: popular_movies, title: 'Popular movies' }) %>
+    <%- include ('../components/movielist', { results: upcoming_movies, title: 'Upcoming movies' }) %>
 
-        <li>
-            <a href="/genre/<%= genre.id %>">
-                <p><%= genre.name %></p>
-            </a>
-        </li>
-
-        <% }) %>
-
-    </ul>
 </main>
 
 <%- include ('../components/footer') %>
