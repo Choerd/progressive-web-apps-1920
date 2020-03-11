@@ -1,3 +1,26 @@
-<h1>Featured movie here</h1>
+<section movie-highlight>
 
-<p> <%= best_movie_video.key %> </p>
+    <h1>Movie of the Day</h1>
+    <article>
+        <div>
+            <div>
+                <h2> <%= best_movie.title %> </h3>
+                    <p> <%= best_movie.overview %> </p>
+                    <img src="https://image.tmdb.org/t/p/w200/<%= best_movie.poster_path %>">
+            </div>
+
+            <div>
+                <p>Release date: <%= best_movie.release_date %> </p>
+                <p>Score: <%= best_movie.vote_average %> </p>
+                <p>Popularity: <%= best_movie.popularity %> </p>
+            </div>
+        </div>
+
+        <div>
+            <iframe
+                src=" https://www.youtube.com/embed/<%= best_movie_video.key %>?autoplay=1&controls=0&disablekb=1&modestbranding=1"
+                frameborder="0"></iframe>
+        </div>
+    </article>
+
+</section>
