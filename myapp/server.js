@@ -24,19 +24,19 @@ app.get('/', async (req, res) => {
     const data = await queries
 
     const movieid = data[0].results[0].id
-    const movie = fetcher(`https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=${apikey}`)
+    const movie = await fetcher(`https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=${apikey}`)
     const best_movie_video = await movie
 
     res.render('home', {
         best_movie: data[0].results[0],
-        best_movie_video: best_movie_video,
+        best_movie_video: best_movie_video.results[0],
         popular_movies: data[1].results,
         upcoming_movies: data[2].results
     })
 })
 
 app.get('/movie/:id', async (req, res) => {
-    const movie = await fetcher(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${apikey}&language=en-US`)
+    const movie = await fetcher(`https://api.themoviedb.org/3/movie/118340?api_key=ebc313f38232bfbdaa36ea5a11721c5f`)
 
     res.render('movie', {
         movie

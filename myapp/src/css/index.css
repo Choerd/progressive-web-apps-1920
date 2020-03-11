@@ -8,10 +8,6 @@
     font-family: Avenir, Arial, Helvetica, sans-serif;
 }
 
-*:hover {
-    cursor: default;
-}
-
 header, footer {
     width: 100vw;
     background-color: rgb(20, 20, 20);
@@ -67,15 +63,20 @@ ul[movie-list-horizontal]:after {
 ul[movie-list-horizontal] a {
     margin: 0px 2px;
 }
+
+ul[movie-list-horizontal] a:hover {
+    cursor: pointer;
+}
+
+ul[movie-list-horizontal] li {
+    height: 300px;
+}
+
 ul[movie-list-horizontal] a li img {
     transform: translate(0px, 0px);
     width: 200px;
     height: 300px;
     transition: width .3s, height .3s;
-}
-
-ul[movie-list-horizontal] li {
-    height: 300px;
 }
 
 ul[movie-list-horizontal] a:hover li img {
