@@ -27,6 +27,8 @@ app.get('/', async (req, res) => {
     const movie = await fetcher(`https://api.themoviedb.org/3/movie/${movieid}/videos?api_key=${apikey}`)
     const best_movie_video = await movie
 
+    console.log(data[0].results[0])
+
     res.render('home', {
         best_movie: data[0].results[0],
         best_movie_video: best_movie_video.results[0],
