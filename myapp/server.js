@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express')
 const fetcher = require('./modules/data.js')
 
@@ -9,7 +11,7 @@ app.use(express.static('src'))
 app.set('view engine', 'ejs');
 app.set('views', 'templates');
 
-const apikey = `ebc313f38232bfbdaa36ea5a11721c5f`
+const apikey = process.env.apikey
 
 app.get('/', async (req, res) => {
     const best_movie = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apikey}`
