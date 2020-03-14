@@ -1,23 +1,19 @@
 <%- include ('../components/head') %>
 
-<main>
-    <h1><%= title %></h1>
+<h1><%= title %></h1>
 
-    <ul movie-list>
+<ul movie-list>
 
-        <% movies.forEach(movie => { %>
+    <% movies.forEach(movie => { %>
 
-        <a href="/movie/<%= movie.id %>">
-            <li>
-                <img src="https://image.tmdb.org/t/p/w300/<%= movie.poster_path %>">
-            </li>
-        </a>
+    <a href="/movie/<%= movie.id %>">
+        <li>
+            <img src="https://image.tmdb.org/t/p/w300/<%= movie.poster_path %>">
+        </li>
+    </a>
 
-        <% }) %>
+    <% }) %>
 
-    </ul>
-</main>
-
-</body>
+</ul>
 
 <%- include ('../components/footer') %>

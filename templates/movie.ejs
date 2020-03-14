@@ -1,17 +1,15 @@
 <%- include ('../components/head') %>
 
-<main>
-    <article>
-        <img src="https://image.tmdb.org/t/p/w400/<%= movie.poster_path %>">
-        <div>
-            <h1><%= movie.original_title %></h1>
-            <p><span>Overview: </span><%= movie.overview %></p>
+<article>
+    <img src="https://image.tmdb.org/t/p/w400/<%= movie.poster_path %>">
+    <div>
+        <h1><%= movie.original_title %></h1>
+        <p><span>Overview: </span><%= movie.overview %></p>
 
-            <!-- foreach genre -->
-            <p><span>Genres: </span><%= movie.genres.name %></p>
+        <!-- foreach genre -->
+        <p><span>Genres: </span><%= movie.genres.name %></p>
 
-        </div>
-    </article>
-</main>
+    </div>
+</article>
 
 <%- include ('../components/footer') %>
