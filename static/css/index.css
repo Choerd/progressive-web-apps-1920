@@ -1,10 +1,7 @@
+@import 'reset.css';
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    list-style: none;
-    font-family: Avenir, Arial, Helvetica, sans-serif;
+    font-family: Lato, Arial, Helvetica, sans-serif;
 }
 
 header, footer {
