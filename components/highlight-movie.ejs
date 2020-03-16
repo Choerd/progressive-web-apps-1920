@@ -1,26 +1,29 @@
 <section movie-highlight>
 
-    <h1>Movie of the Day</h1>
-    <article>
-        <div>
+    <h1> <%= title %> </h1>
+    <div>
+
+        <% results.forEach(result => { %>
+
+        <a href="/movie/<%= result.id %>">
             <div>
-                <h2> <%= best_movie.title %> </h3>
-                    <p> <%= best_movie.overview %> </p>
-                    <img src="https://image.tmdb.org/t/p/w200/<%= best_movie.poster_path %>">
+                <div>
+                    <h2> <%= result.title %> </h2>
+                    <p> <%= result.overview %> </p>
+                </div>
+
+                <div>
+                    <p>Release date: <%= result.release_date %> </p>
+                    <p>Score: <%= result.vote_average %> </p>
+                    <p>Popularity: <%= result.popularity %> </p>
+                </div>
             </div>
 
             <div>
-                <p>Release date: <%= best_movie.release_date %> </p>
-                <p>Score: <%= best_movie.vote_average %> </p>
-                <p>Popularity: <%= best_movie.popularity %> </p>
+                <img src="https://image.tmdb.org/t/p/w200/<%= result.poster_path %>">
             </div>
-        </div>
+        </a>
 
-        <div>
-            <iframe tabindex="-1"
-                src=" https://www.youtube.com/embed/<%= best_movie_video.key %>?autoplay=1&controls=0&disablekb=1&modestbranding=1"
-                frameborder="0"></iframe>
-        </div>
-    </article>
+        <% }) %>
 
 </section>

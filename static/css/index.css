@@ -81,13 +81,19 @@ ul[movie-list-horizontal] a:hover li img {
     height: 330px;
 }
 
+
 /* Movie hightlight */
 section[movie-highlight] {
     width: 90vw;
     margin-bottom: 10vh;
 }
 
-section article {
+section[movie-highlight] h1 {
+    margin-bottom: 15px;
+}
+
+
+section[movie-highlight] > div {
     display: flex;
 }
 
@@ -95,29 +101,67 @@ section[movie-highlight] * {
     color: #e5e5e5;
 }
 
-section[movie-highlight] article > div:nth-of-type(1) {
+section[movie-highlight] a {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
     position: relative;
-    width: 40%;
-    padding-right: 24px;
+    text-decoration: none;
 }
 
-section[movie-highlight] article > div:nth-of-type(1) div:nth-of-type(1) p {
-    padding-right: 24px;
+section[movie-highlight] a:first-of-type {
+    margin-right: 5%;
 }
 
-section[movie-highlight] article > div:nth-of-type(2) {
-    overflow: hidden;
-    padding-top: 40%;
-    position: relative;
-    width: 60%;
+section[movie-highlight] a > div {
+    width: 50%;
+    padding-right: 20px;
 }
 
-section[movie-highlight] iframe {
-    border: 0;
-    height: 100%;
-    left: 0;
+section[movie-highlight] a > div:first-of-type > div:last-of-type {
     position: absolute;
-    top: 0;
-    width: 100%;
+    bottom: 0;
 }
 
+
+section[movie-highlight] a > div:nth-of-type(2) img {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 1000px) {
+    section[movie-highlight] > div {
+        flex-wrap: wrap;
+    }
+
+    section[movie-highlight] a {
+        /* flex-direction: column; */
+        width: 100vw;
+        flex-wrap: no-wrap;
+    }
+
+    section[movie-highlight] a:first-of-type {
+        margin: 0px 0px 15% 0px;
+    }
+
+    section[movie-highlight] a > div {
+        width: 100%;
+        padding: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    section[movie-highlight] a {
+        flex-direction: column;
+    }
+
+    section[movie-highlight] a > div:nth-of-type(2) img {
+        margin: 10px 0px 0px 100%;
+        transform: translateX(-100%);
+        width: 45%;
+    }
+
+    section[movie-highlight] a > div:first-of-type > div:last-of-type {
+        width: 50%;
+    }
+}

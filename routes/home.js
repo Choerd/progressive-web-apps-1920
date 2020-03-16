@@ -18,7 +18,8 @@ module.exports = async (req, res) => {
     const best_movie_video = await movie
 
     res.render('home', {
-        best_movie: data[0].results[0],
+        // best_movie: data[0].results[0],
+        best_movies: [data[0].results[0], data[0].results[1]],
         best_movie_video: best_movie_video.results[0],
         popular_movies: data[1].results,
         upcoming_movies: data[2].results
