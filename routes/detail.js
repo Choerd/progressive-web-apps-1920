@@ -1,7 +1,8 @@
 const fetcher = require('../modules/data.js')
+const apikey = process.env.apikey
 
 module.exports = async (req, res) => {
-    const movie = await fetcher(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=ebc313f38232bfbdaa36ea5a11721c5f`)
+    const movie = await fetcher(`https://api.themoviedb.org/3/movie/${req.params.id}?api_key=${apikey}`)
 
     res.render('movie', {
         movie
