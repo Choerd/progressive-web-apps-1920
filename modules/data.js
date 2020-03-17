@@ -7,10 +7,3 @@ const fetcher = async (url) => {
 }
 
 module.exports = fetcher
-
-// const logger = {
-//     info: () => { console.log('info') },
-//     error: () => { console.log('error') }
-// }
-
-// module.exports = logger
