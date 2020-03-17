@@ -6,6 +6,16 @@
     </ul>
 </footer>
 
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => registration.update())
+        },
+            (error => console.log('ServiceWorker failed registration:', err))
+        )
+    }
+</script>
 </body>
 
 </html>

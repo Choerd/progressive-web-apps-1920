@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "prestart": "npm run build:css",
     "start": "node server.js",
+    "prebuild:css": "rimraf /static/bundled/index.css",
+    "build:css": "node build-css.js",
     "dev": "nodemon server.js"
   },
   "repository": {
@@ -18,19 +21,17 @@
   },
   "homepage": "https://github.com/Choerd/progressive-web-apps-1920#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "heroku": "^7.39.0",
-    "node-fetch": "^2.6.0"
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cssimport": "^7.0.0",
+    "gulp-rename": "^2.0.0",
+    "node-fetch": "^2.6.0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
-    "chokidar-cli": "^2.1.0",
-    "dotenv": "^8.2.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "nodemon": "^2.0.2",
-    "rimraf": "^3.0.2"
+    "nodemon": "^2.0.2"
   }
 }
