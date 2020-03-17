@@ -109,7 +109,7 @@ section[movie-highlight] a {
     text-decoration: none;
 }
 
-section[movie-highlight] a:first-of-type {
+section[movie-highlight] a {
     margin-right: 5%;
 }
 
@@ -141,18 +141,27 @@ section[movie-highlight] a > div:nth-of-type(2) img {
     }
 
     section[movie-highlight] a {
-        /* flex-direction: column; */
         width: 100vw;
         flex-wrap: no-wrap;
     }
 
-    section[movie-highlight] a:first-of-type {
+    section[movie-highlight] a {
         margin: 0px 0px 15% 0px;
     }
 
-    section[movie-highlight] a > div {
+    section[movie-highlight] > div:first-of-type > a > div:nth-of-type(1) {
         width: 100%;
+    }
+
+
+    section[movie-highlight] > div:first-of-type > a > div:nth-of-type(2) {
         padding: 0px;
+        width: unset;
+    }
+
+    section[movie-highlight] > div:first-of-type > a > div:nth-of-type(2) img {
+        margin: 0px;
+        transform: unset;
     }
 }
 
@@ -161,13 +170,20 @@ section[movie-highlight] a > div:nth-of-type(2) img {
         flex-direction: column;
     }
 
-    section[movie-highlight] a > div:nth-of-type(2) img {
-        margin: 10px 0px 0px 100%;
-        transform: translateX(-100%);
-        width: 45%;
+    section[movie-highlight] > div:first-of-type > a > div:nth-of-type(1) {
+        padding: 0px 0px 10px 0px;
     }
 
-    section[movie-highlight] a > div:first-of-type > div:last-of-type {
+    section[movie-highlight] > div:first-of-type > a > div:nth-of-type(2) {
+        width: 100%;
+    }
+
+    section[movie-highlight] > div:first-of-type > a > div:nth-of-type(2) img {
+        float: right;
+        width: 50%;
+    }
+
+    section[movie-highlight] > div:first-of-type a > div:first-of-type > div:last-of-type {
         width: 50%;
     }
 }

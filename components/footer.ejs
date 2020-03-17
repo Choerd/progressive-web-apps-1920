@@ -8,12 +8,12 @@
 
 <script>
     if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
+        window.addEventListener('load', function () {
             navigator.serviceWorker.register('/service-worker.js')
-                .then((registration) => registration.update())
-        },
-            (error => console.log('ServiceWorker failed registration:', err))
-        )
+                .then(function (registration) {
+                    return registration.update()
+                })
+        })
     }
 </script>
 </body>
