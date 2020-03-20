@@ -1,55 +1,59 @@
 # Progressive Web Apps @cmda-minor-web · 2019-2020
 
-In this course we will convert the client side web application previously made at the OBA into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.  
 
-## Learning goals
-- _You understand the difference between client side and server side rendering and you can apply server side rendering
-in your application_
-- _You understand how a Service Worker works and you can implement it in your application._
-- _You understand how the critical render path works and how you can optimize it for a better runtime and / or perceived performance._
+## Inhoudsopgave
+* [Assignment](#Introduction)
+* [Features](#Features)
+* [API](#API)
+* [Install notes](#Install-notes)
+* [Credits](#Credits)
 
-[Rubric](https://docs.google.com/spreadsheets/d/e/2PACX-1vSc48v1nrjcwH0llcTd68xyK7f2fDC2UL4d6h4ZNW3DU8ucez6ZOHiId1XSX0RP5ByvLC8p5pVUGZT4/pubhtml)
+<hr>
 
-## Program
+**Ik wil feedback op:**  
+* [ ] Service Worker die afbeeldingen opslaat in `Disk Cache?`
+* [ ] Hoe sta ik ervoor betreffende de opdracht en mogelijkheden
+* [ ] Andere extra tips of aandachtspuntjes zijn altijd welkom
 
-### Week 1 - Server Side Rendering 📡
+<hr>
 
-Goal: Render web pages server side
+## Assignment
+In this course we will convert the client side web application previously made at the OBA into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.
 
-[Exercises](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-1.md)  
-[Slides](...)  
-[The Web landscape](...)  
-
-
-### Week 2 - Progressive Web App 🚀
-
-Goals: Convert application to a Progressive Web App
-
-[Opdrachten](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-2.md)  
-[Slides](...)
+<img src="https://user-images.githubusercontent.com/45365598/77164871-71400c80-6ab1-11ea-850d-fe8e299b27f3.png">
 
 
-### Week 2 - Critical Rendering Path 📉 
+<hr>
 
-Doel: Optimize the Critical Rendering Path   
-[Opdrachten](https://github.com/cmda-minor-web/progressive-web-apps-1920/blob/master/course/week-3.md)  
-[Slides](...)
+## Features
+- [x] The Progressive Webapp is usable without Javascript
+- [x] Implemented a Service Worker and Manifest.json
+- [x] The user can navigate from the overviewpage to the detailpages
+- [ ] More features soon..
 
+<hr>
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+## API
+For this project I used `the Movie Database API` which is a really big and good structured database. It has data about:
+* Movies
+* TV episodes
+* Reviews  
 
-<!-- ☝️ replace this description with a description of your own work -->
+You can retreive the data by all different parameters which you can test at their website.
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+`!IMPORTANT | You need a account to get a API key`
 
-<!-- Maybe a table of contents here? 📚 -->
+<hr>
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+## Install notes
+1. Clone de repo van Github
+2. `https://github.com/Choerd/progressive-web-apps-1920.git`
+3. Installeer of zorg ervoor dat je `nodejs` en `npm` geinstalleerd hebt.
+4. Installeer alle node modules met `npm install`
+5. Gebruik de applicatie met `npm start`
+6. Open een browser en ga naar `http://localhost:3000/`
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+<hr>
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
-
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
-
-<!-- How about a license here? 📜 (or is it a licence?) 🤷 -->
+## Credits
+`None...`
