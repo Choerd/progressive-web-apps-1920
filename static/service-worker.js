@@ -1,7 +1,7 @@
 const CORE_CACHE_VERSION = 'v1'
 const CORE_ASSETS = [
     '/offline',
-    '/bundled/index.css'
+    '/css/index.css'
 ]
 
 self.addEventListener('install', event => {

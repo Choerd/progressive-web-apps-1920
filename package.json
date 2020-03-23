@@ -7,8 +7,8 @@
     "prestart": "npm run build:css",
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "prebuild:css": "rimraf /static/bundled/index.css",
-    "build:css": "node build-css.js"
+    "prebuild:css": "rimraf /static/css/index.css",
+    "build:css": "gulp"
   },
   "repository": {
     "type": "git",
@@ -25,14 +25,13 @@
     "ejs": "^3.0.1",
     "express": "^4.17.1",
     "express-minify-html-2": "^1.0.1",
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-cssimport": "^7.0.0",
-    "gulp-rename": "^2.0.0",
     "node-fetch": "^2.6.0",
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
     "nodemon": "^2.0.2"
   }
 }
