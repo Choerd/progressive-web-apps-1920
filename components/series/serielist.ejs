@@ -1,0 +1,19 @@
+<section>
+
+    <h3> <%= title %> </h3>
+
+    <ul movie-list-horizontal>
+
+        <% results.forEach(result => { %>
+
+        <a href="/serie/<%= result.id %>">
+            <li>
+                <img src="https://image.tmdb.org/t/p/w200/<%= result.poster_path %>">
+            </li>
+        </a>
+
+        <% }) %>
+
+    </ul>
+
+</section>

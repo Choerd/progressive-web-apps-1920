@@ -1,0 +1,36 @@
+<%- include ('../components/head') %>
+
+<article detail>
+    <img src="https://image.tmdb.org/t/p/w400/<%= serie.poster_path %>">
+    <div>
+        <h1><%= serie.name %></h1>
+
+        <p overview><%= serie.overview %></p>
+
+        <p genres>Genres:
+            <% serie.genres.forEach(genre => { %>
+            <span><%= genre.name %></span>
+            <% }) %>
+        </p>
+
+        <p creators>Creators:
+            <% serie.created_by.forEach(creator => { %>
+            <span><%= creator.name %></span>
+            <% }) %>
+        </p>
+
+        <p networks>Networks:
+            <% serie.networks.forEach(network => { %>
+            <span><%= network.name %></span>
+            <% }) %>
+        </p>
+
+        <p production_companies>Production companies:
+            <% serie.production_companies.forEach(company => { %>
+            <span><%= company.name %></span>
+            <% }) %>
+        </p>
+    </div>
+</article>
+
+<%- include ('../components/footer') %>

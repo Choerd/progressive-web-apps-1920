@@ -1,10 +1,27 @@
 <%- include ('../components/head') %>
 
-<article>
+<article detail>
     <img src="https://image.tmdb.org/t/p/w400/<%= movie.poster_path %>">
     <div>
         <h1><%= movie.original_title %></h1>
-        <p><span>Overview: </span><span movie.overview %></p>
+        <p tagline><%= movie.tagline %></p>
+
+        <p overview><%= movie.overview %></p>
+
+        <p genres>Genres:
+            <% movie.genres.forEach(genre => { %>
+            <span><%= genre.name %></span>
+            <% }) %>
+        </p>
+
+        <p production_companies>Production companies:
+            <% movie.production_companies.forEach(company => { %>
+            <span><%= company.name %></span>
+            <% }) %>
+        </p>
+
+        <p budget><span>Budget: €</span><%= movie.budget %>,-</p>
+        <p revenue><span>Revenue: €</span><%= movie.revenue %>,-</p>
     </div>
 </article>
 

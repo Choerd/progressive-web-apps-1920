@@ -16,12 +16,20 @@ header *, footer * {
     text-decoration: none;
 }
 
+header li {
+    display: inline;
+}
+
+header li:not(:last-of-type) {
+    padding-right: 20px;
+}
+
 header a:hover, footer a:hover {
     cursor: pointer;
 }
 
 main {
-    padding: 5vh 0vw;
+    padding: 5vh 5vw;
     background-color: rgb(20, 20, 20);
 }
 
@@ -31,12 +39,17 @@ main > h1 {
     color: #e5e5e5;
 } 
 
-main > section {
-    margin-left: 5vw;
+main section:not(:last-of-type) {
+    margin-bottom: 8vh;
+}
+
+main section:not(:last-of-type) {
+    margin-bottom: 8vh;
 }
 
 section h3 {
     color: #e5e5e5;
+    margin-bottom: 2vh;
 }
 
 /* Horizontal movies overview */
@@ -85,7 +98,6 @@ ul[movie-list-horizontal] a:hover li img {
 /* Movie hightlight */
 section[movie-highlight] {
     width: 90vw;
-    margin-bottom: 10vh;
 }
 
 section[movie-highlight] h1 {
@@ -145,10 +157,6 @@ section[movie-highlight] a > div:nth-of-type(2) img {
         flex-wrap: no-wrap;
     }
 
-    section[movie-highlight] a {
-        margin: 0px 0px 15% 0px;
-    }
-
     section[movie-highlight] > div:first-of-type > a > div:nth-of-type(1) {
         width: 100%;
     }
@@ -170,6 +178,10 @@ section[movie-highlight] a > div:nth-of-type(2) img {
         flex-direction: column;
     }
 
+    section[movie-highlight] a:not(:last-of-type) {
+        margin-bottom: 4vh;
+    }
+
     section[movie-highlight] > div:first-of-type > a > div:nth-of-type(1) {
         padding: 0px 0px 10px 0px;
     }
@@ -185,5 +197,58 @@ section[movie-highlight] a > div:nth-of-type(2) img {
 
     section[movie-highlight] > div:first-of-type a > div:first-of-type > div:last-of-type {
         width: 50%;
+    }
+}
+
+[detail] {
+    display: flex;
+}
+
+[detail] * {
+    color: white;
+}
+
+[detail] > div > * {
+    margin-bottom: 20px;
+}
+
+[detail] div {
+    padding-left: 20px;
+}
+
+[detail] h1 {
+    font-size: 24px;
+}
+
+@media screen and (max-width: 700px) {
+    [detail] {
+        flex-direction: column;
+    }
+
+    [detail] img {
+        width: 400px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    [detail] div {
+        margin-top: 2vh;
+        padding-left: 0px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    [detail] {
+        flex-direction: column;
+    }
+
+    [detail] img {
+        width: 100%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    [detail] div {
+        padding-left: 0px;
     }
 }
