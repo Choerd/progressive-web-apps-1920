@@ -1,10 +1,25 @@
 require('dotenv').config()
 const express = require('express')
+const minifyHTML = require('express-minify-html-2');
 const port = process.env.PORT || 3000
 const app = express()
 
+app.use(minifyHTML({
+    override: true,
+    exception_url: false,
+    htmlMinifier: {
+        removeComments: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeEmptyAttributes: true,
+        minifyJS: true
+    }
+}))
+
 // Static assets folder
 app.use(express.static('static'))
+
 
 // Declare template engine and path
 app.set('view engine', 'ejs');

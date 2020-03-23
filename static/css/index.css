@@ -135,12 +135,10 @@ section[movie-highlight] a h2 {
     margin-bottom: 8px;
 }
 
-
 section[movie-highlight] a > div:first-of-type > div:last-of-type {
     position: absolute;
     bottom: 0;
 }
-
 
 section[movie-highlight] a > div:nth-of-type(2) img {
     margin-left: 50%;
@@ -150,6 +148,10 @@ section[movie-highlight] a > div:nth-of-type(2) img {
 @media screen and (max-width: 1000px) {
     section[movie-highlight] > div {
         flex-wrap: wrap;
+    }
+
+    section[movie-highlight] a:not(:last-of-type) {
+        margin-bottom: 4vh;
     }
 
     section[movie-highlight] a {
@@ -218,6 +220,10 @@ section[movie-highlight] a > div:nth-of-type(2) img {
 
 [detail] h1 {
     font-size: 24px;
+}
+
+[detail] img {
+    background-color: red;
 }
 
 @media screen and (max-width: 700px) {
