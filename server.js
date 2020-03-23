@@ -20,7 +20,6 @@ app.use(minifyHTML({
 // Static assets folder
 app.use(express.static('static'))
 
-
 // Declare template engine and path
 app.set('view engine', 'ejs');
 app.set('views', 'templates');
@@ -34,11 +33,12 @@ const serie_details = require('./routes/serie_details.js')
 const offline = require('./routes/offline.js')
 
 // Routes
-app.get('/', async (req, res) => home(req, res))
-app.get('/movies', async (req, res) => movies(req, res))
-app.get('/movie/:id', async (req, res) => movie_details(req, res))
-app.get('/series', async (req, res) => series(req, res))
-app.get('/serie/:id', async (req, res) => serie_details(req, res))
-app.get('/offline', (req, res) => offline(req, res))
+app
+    .get('/', (req, res) => home(req, res))
+    .get('/movies', (req, res) => movies(req, res))
+    .get('/movie/:id', (req, res) => movie_details(req, res))
+    .get('/series', (req, res) => series(req, res))
+    .get('/serie/:id', (req, res) => serie_details(req, res))
+    .get('/offline', (req, res) => offline(req, res))
 
-app.listen(port, () => console.log(`Example app listening on port ${port}`))
+    .listen(port, () => console.log(`Example app listening on port ${port}`))
