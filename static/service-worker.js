@@ -9,11 +9,11 @@ en het vervolgens om te schrijven om het zelf te kunnen gebruiken heb ik er wel 
 
 const CORE_CACHE_VERSION = 'v1'
 const CORE_ASSETS = [
-    '/offline',
-    '/css/index.css',
+    '/',
     '/movies',
     '/series',
-    '/'
+    '/offline',
+    'css/index.css'
 ]
 
 // Open de cache en stop alle CORE_ASSETS erin
