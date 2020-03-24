@@ -226,10 +226,7 @@ section[movie-highlight] a > div:nth-of-type(2) img {
 }
 
 [detail] > img {
-    width: 400px;
-    height: 600px;
     background-color: rgb(55, 55, 55);
-    padding-left: 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -254,7 +251,6 @@ section[movie-highlight] a > div:nth-of-type(2) img {
     }
 
     [detail] img {
-        width: 100%;
         height: auto;
         margin-left: 50%;
         transform: translateX(-50%);

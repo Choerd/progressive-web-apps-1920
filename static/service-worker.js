@@ -3,7 +3,8 @@ const CORE_ASSETS = [
     '/offline',
     '/css/index.css',
     '/movies',
-    '/series'
+    '/series',
+    '/'
 ]
 
 self.addEventListener('install', event => {

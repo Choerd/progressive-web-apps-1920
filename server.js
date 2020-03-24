@@ -1,9 +1,11 @@
 require('dotenv').config()
 const
     express = require('express'),
+    compression = require('compression'),
     minifyHTML = require('express-minify-html-2'),
     port = process.env.PORT || 3000,
     app = express()
+
 
 app
     .use(minifyHTML({
@@ -18,12 +20,16 @@ app
             minifyJS: true
         }
     }))
+    .use(compression())
+
     // Static assets folder
     .use(express.static('static'))
+
 
     // Declare template engine and path
     .set('view engine', 'ejs')
     .set('views', 'templates')
+
 
 // Determain data/content per route
 const
@@ -33,6 +39,7 @@ const
     series = require('./routes/series.js'),
     serie_details = require('./routes/serie_details.js'),
     offline = require('./routes/offline.js')
+
 
 // Routes
 app
