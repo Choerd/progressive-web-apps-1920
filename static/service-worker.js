@@ -30,6 +30,7 @@ self.addEventListener('install', event => {
 // Synchroniseert de service worker tussen alle clients
 self.addEventListener('activate', event => {
     console.log('Activating service worker')
+
     event.waitUntil(clients.claim())
 })
 
@@ -41,6 +42,7 @@ wordt er een offline pagina teruggegeven
 self.addEventListener('fetch', event => {
     if (isCoreGetRequest(event.request)) {
         console.log('Core get request: ', event.request.url)
+
         event.respondWith(
             caches.open(CORE_CACHE_VERSION)
                 .then(cache => cache.match(event.request.url))

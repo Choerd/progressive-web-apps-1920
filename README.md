@@ -15,8 +15,6 @@
 ## Assignment
 In this course we will convert the client side web application previously made at the OBA into a server side rendered application. We also add functionalities based on the Service Worker and turn the application into a Progressive Web App. Ultimately we are going to implement a series of optimisations to improve the performance of the application.
 
-<img src="https://user-images.githubusercontent.com/45365598/77164871-71400c80-6ab1-11ea-850d-fe8e299b27f3.png">
-
 <hr>
 
 ## My Progressive Webapp
