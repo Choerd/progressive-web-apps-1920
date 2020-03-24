@@ -6,11 +6,11 @@
 
         <% results.forEach(result => { %>
 
-        <a href="/movie/<%= result.id %>">
-            <li>
-                <img src="https://image.tmdb.org/t/p/w200/<%= result.poster_path %>">
-            </li>
-        </a>
+        <li>
+            <a href="/movie/<%= result.id %>">
+                <img src="https://image.tmdb.org/t/p/w200/<%= result.poster_path %>" alt="<%= result.title %>">
+            </a>
+        </li>
 
         <% }) %>
 
