@@ -60,6 +60,7 @@ ul[movie-list-horizontal] {
     display: flex;
     padding: 15px 0vw;
     margin-bottom: 5vh;
+    list-style: none;
 }
 
 ul[movie-list-horizontal]:after {
