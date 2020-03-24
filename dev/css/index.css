@@ -82,7 +82,7 @@ ul[movie-list-horizontal] li {
     height: 300px;
 }
 
-ul[movie-list-horizontal] a li img {
+ul[movie-list-horizontal] li img {
     transform: translate(0px, 0px);
     width: 200px;
     height: 300px;
@@ -90,13 +90,12 @@ ul[movie-list-horizontal] a li img {
     background-color: rgb(53, 53, 53);
 }
 
-ul[movie-list-horizontal] a:hover li img {
+ul[movie-list-horizontal] li:hover img {
     transform: translate(0px, -15px);
     width: 220px;
     height: 330px;
     background-color: rgb(53, 53, 53);
 }
-
 
 /* Movie hightlight */
 section[movie-highlight] {
@@ -237,6 +236,7 @@ section[movie-highlight] a > div:nth-of-type(2) img {
     [detail] img {
         margin-left: 50%;
         transform: translateX(-50%);
+        width: 400px;
     }
 
     [detail] div {
@@ -251,7 +251,7 @@ section[movie-highlight] a > div:nth-of-type(2) img {
     }
 
     [detail] img {
-        height: auto;
+        width: 100%;
         margin-left: 50%;
         transform: translateX(-50%);
     }
