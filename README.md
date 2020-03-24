@@ -1,19 +1,14 @@
 # Progressive Web Apps @cmda-minor-web · 2019-2020
 
-
-## Inhoudsopgave
-* [Assignment](#Introduction)
-* [Features](#Features)
+## Tables of Contents
+* [Assignment](#Assignment)
+* [My Progressive Webapp](#My-Progressive-Webapp)
+* [Performance Enhancements](#Performance-Enhancements)
 * [API](#API)
 * [Install notes](#Install-notes)
+* [Learnings during this course](#Learnings-during-this-course)
+* [What I wanted to implement](#What-I-wanted-to-implement)
 * [Credits](#Credits)
-
-<hr>
-
-**Ik wil feedback op:**  
-* [ ] Service Worker die afbeeldingen opslaat in `Disk Cache?`
-* [ ] Hoe sta ik ervoor betreffende de opdracht en mogelijkheden
-* [ ] Andere extra tips of aandachtspuntjes zijn altijd welkom
 
 <hr>
 
@@ -22,14 +17,69 @@ In this course we will convert the client side web application previously made a
 
 <img src="https://user-images.githubusercontent.com/45365598/77164871-71400c80-6ab1-11ea-850d-fe8e299b27f3.png">
 
+<hr>
+
+## My Progressive Webapp
+**Concept**  
+I made a webapp where you can explore movies and series. The user can navigate through different pages which are all rendered server side. Every detail page has more details about that movie or serie. Because the data of films and series differ from each other, these pages have different content.
+
+<img src="https://user-images.githubusercontent.com/45365598/77164871-71400c80-6ab1-11ea-850d-fe8e299b27f3.png">
+
+**Features**  
+- [x] By using a Service Worker every page visited can be visited when the user has no internet
+- [x] Because images are loading slowly I prevented these images from reflowing the page by giving them a width, height and background-color 
 
 <hr>
 
-## Features
-- [x] The Progressive Webapp is usable without Javascript
-- [x] Implemented a Service Worker and Manifest.json
-- [x] The user can navigate from the overviewpage to the detailpages
-- [ ] More features soon..
+## Performance Enhancements
+
+**1. Visual stability**
+
+<details><summary>Audit screenshot</summary>
+	
+
+
+</details>
+
+<br>
+
+**2. Minifying CSS**
+
+<details><summary>Audit screenshot</summary>
+	
+    
+
+</details>
+
+<br>
+
+**3. Minifying HTML**
+
+<details><summary>Audit screenshot</summary>
+	
+    
+
+</details>
+
+<br>
+
+**4. Compressing response body**
+
+<details><summary>Audit screenshot</summary>
+	
+    
+
+</details>
+
+<br>
+
+**5. Added Service Worker**
+
+<details><summary>Audit screenshot</summary>
+	
+    
+
+</details>
 
 <hr>
 
@@ -55,5 +105,16 @@ You can retreive the data by all different parameters which you can test at thei
 
 <hr>
 
+## Learnings during this course
+
+<hr>
+
+## What I wanted to implement
+
+<hr>
+
 ## Credits
-`None...`
+A overview from the people who inspired or helped me during this course
+* Understanding and resulted in a working Service Worker (**Declan**)
+    * For this course we had to implement a Service Worker so that the user could visit the already visited pages when the user is offline. A Service Worker also helps for rendering files that are in the cache faster. I've used Declan's code to discover how to approach this and used his code to let my Service Worker work well.
+     > `https://github.com/Choerd/progressive-web-apps-1920/blob/master/static/service-worker.js`
