@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "prestart": "npm run build:css",
     "start": "node server.js",
     "predev": "npm run build:css",
     "dev": "nodemon server.js",
