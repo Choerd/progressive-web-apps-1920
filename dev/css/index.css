@@ -86,12 +86,14 @@ ul[movie-list-horizontal] a li img {
     width: 200px;
     height: 300px;
     transition: width .3s, height .3s;
+    background-color: rgb(53, 53, 53);
 }
 
 ul[movie-list-horizontal] a:hover li img {
     transform: translate(0px, -15px);
     width: 220px;
     height: 330px;
+    background-color: rgb(53, 53, 53);
 }
 
 
@@ -222,8 +224,11 @@ section[movie-highlight] a > div:nth-of-type(2) img {
     font-size: 24px;
 }
 
-[detail] img {
-    background-color: red;
+[detail] > img {
+    width: 400px;
+    height: 600px;
+    background-color: rgb(55, 55, 55);
+    padding-left: 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -232,7 +237,6 @@ section[movie-highlight] a > div:nth-of-type(2) img {
     }
 
     [detail] img {
-        width: 400px;
         margin-left: 50%;
         transform: translateX(-50%);
     }
@@ -250,6 +254,7 @@ section[movie-highlight] a > div:nth-of-type(2) img {
 
     [detail] img {
         width: 100%;
+        height: auto;
         margin-left: 50%;
         transform: translateX(-50%);
     }

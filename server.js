@@ -1,36 +1,38 @@
 require('dotenv').config()
-const express = require('express')
-const minifyHTML = require('express-minify-html-2');
-const port = process.env.PORT || 3000
-const app = express()
+const
+    express = require('express'),
+    minifyHTML = require('express-minify-html-2'),
+    port = process.env.PORT || 3000,
+    app = express()
 
-app.use(minifyHTML({
-    override: true,
-    exception_url: false,
-    htmlMinifier: {
-        removeComments: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true,
-        removeAttributeQuotes: true,
-        removeEmptyAttributes: true,
-        minifyJS: true
-    }
-}))
+app
+    .use(minifyHTML({
+        override: true,
+        exception_url: false,
+        htmlMinifier: {
+            removeComments: true,
+            collapseWhitespace: true,
+            collapseBooleanAttributes: true,
+            removeAttributeQuotes: true,
+            removeEmptyAttributes: true,
+            minifyJS: true
+        }
+    }))
+    // Static assets folder
+    .use(express.static('static'))
 
-// Static assets folder
-app.use(express.static('static'))
-
-// Declare template engine and path
-app.set('view engine', 'ejs');
-app.set('views', 'templates');
+    // Declare template engine and path
+    .set('view engine', 'ejs')
+    .set('views', 'templates')
 
 // Determain data/content per route
-const home = require('./routes/home.js')
-const movies = require('./routes/movies.js')
-const movie_details = require('./routes/movie_details.js')
-const series = require('./routes/series.js')
-const serie_details = require('./routes/serie_details.js')
-const offline = require('./routes/offline.js')
+const
+    home = require('./routes/home.js'),
+    movies = require('./routes/movies.js'),
+    movie_details = require('./routes/movie_details.js'),
+    series = require('./routes/series.js'),
+    serie_details = require('./routes/serie_details.js'),
+    offline = require('./routes/offline.js')
 
 // Routes
 app
@@ -41,4 +43,4 @@ app
     .get('/serie/:id', (req, res) => serie_details(req, res))
     .get('/offline', (req, res) => offline(req, res))
 
-    .listen(port, () => console.log(`Example app listening on port ${port}`))
+    .listen(port, () => console.log(`Using port: ${port}`))

@@ -1,7 +1,9 @@
 const CORE_CACHE_VERSION = 'v1'
 const CORE_ASSETS = [
     '/offline',
-    '/css/index.css'
+    '/css/index.css',
+    '/movies',
+    '/series'
 ]
 
 self.addEventListener('install', event => {
