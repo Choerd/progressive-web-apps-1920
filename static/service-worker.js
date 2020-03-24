@@ -1,3 +1,12 @@
+/*
+Inspiratie van deze code: https://github.com/decrek/progressive-web-apps-1920/blob/master/examples/movies-example/src/service-worker.js
+Aan de hand van de presentatie van Declan heb ik zijn code overgenomen en deze lijn voor lijn uit elkaar gehaald
+om te kijken hoe dit precies werkte.
+
+De code werkte natuurlijk niet meteen. Door dit dus stuk voor stuk uit elkaar te halen, uit te zoeken wat het deed 
+en het vervolgens om te schrijven om het zelf te kunnen gebruiken heb ik er wel veel van geleerd.
+*/
+
 const CORE_CACHE_VERSION = 'v1'
 const CORE_ASSETS = [
     '/offline',
@@ -7,6 +16,7 @@ const CORE_ASSETS = [
     '/'
 ]
 
+// Open de cache en stop alle CORE_ASSETS erin
 self.addEventListener('install', event => {
     console.log('Installing Service Worker')
 
@@ -17,11 +27,17 @@ self.addEventListener('install', event => {
     )
 })
 
+// Synchroniseert de service worker tussen alle clients
 self.addEventListener('activate', event => {
     console.log('Activating service worker')
     event.waitUntil(clients.claim())
 })
 
+/* 
+Kijkt of de request een core request of een html request is. 
+Op basis hiervan gaat wordt de html teruggestuurd, als de pagina niet in de cache staat en de gebruiker offline is
+wordt er een offline pagina teruggegeven
+*/
 self.addEventListener('fetch', event => {
     if (isCoreGetRequest(event.request)) {
         console.log('Core get request: ', event.request.url)
@@ -36,7 +52,7 @@ self.addEventListener('fetch', event => {
             caches.open('html-cache')
                 .then(cache => cache.match(event.request.url))
                 .then(response => response ? response : fetchAndCache(event.request, 'html-cache'))
-                .catch(e => {
+                .catch(error => {
                     return caches.open(CORE_CACHE_VERSION)
                         .then(cache => cache.match('/offline'))
                 })
@@ -44,6 +60,7 @@ self.addEventListener('fetch', event => {
     }
 })
 
+// Als het bestand geen core asset is moet de deze worden gecached wanneer de gebruiker op de pagina komt
 function fetchAndCache(request, cacheName) {
     return fetch(request)
         .then(response => {

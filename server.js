@@ -25,13 +25,12 @@ app
     // Static assets folder
     .use(express.static('static'))
 
-
     // Declare template engine and path
     .set('view engine', 'ejs')
     .set('views', 'templates')
 
 
-// Determain data/content per route
+// Determine data/content per route
 const
     home = require('./routes/home.js'),
     movies = require('./routes/movies.js'),
