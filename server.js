@@ -1,11 +1,11 @@
 require('dotenv').config()
+
 const
     express = require('express'),
     compression = require('compression'),
     minifyHTML = require('express-minify-html-2'),
     port = process.env.PORT || 3000,
     app = express()
-
 
 app
     .use(minifyHTML({

@@ -34,15 +34,22 @@ self.addEventListener('fetch', (event) => {
             caches.open(CORE_CACHE_VERSION)
                 .then(cache => cache.match(event.request.url))
         )
-    } else if ((!CORE_ASSETS.includes(getPathName(event.request.url))) && event.request.headers.get('accept').indexOf('text/html') > -1) {
+    } else if (event.request.method === 'GET' && (event.request.headers.get('accept') !== null && event.request.headers.get('accept').indexOf('text/html') > -1)) {
         event.respondWith(
             caches.open(CORE_CACHE_VERSION)
-                .then(() => caches.open(CORE_CACHE_VERSION)
+                .then(cache => cache.match(event.request.url))
+                .then(response => response ? response : fetchPage(event.request))
+                .catch(() => caches.open(CORE_CACHE_VERSION)
                     .then(cache => cache.match('/offline'))
                 )
         )
     }
 })
+
+function fetchPage(request) {
+    return fetch(request)
+        .then(response => response)
+}
 
 function getPathName(requestUrl) {
     const url = new URL(requestUrl)

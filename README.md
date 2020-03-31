@@ -114,5 +114,5 @@ You can retreive the data by all different parameters which you can test at thei
 ## Credits
 A overview from the people who inspired or helped me during this course
 * Understanding and resulted in a working Service Worker (**Declan**)
-    * For this course we had to implement a Service Worker so that the user could visit the already visited pages when the user is offline. A Service Worker also helps for rendering files that are in the cache faster. I've used Declan's code to discover how to approach this and used his code to let my Service Worker work well.
+    * For this course we had to implement a Service Worker so that the user could visit the core pages when the user is offline. A Service Worker also helps for rendering files in the cache faster. I've used Declan's code to discover how to approach the implementation of a Service Worker.
      > `https://github.com/Choerd/progressive-web-apps-1920/blob/master/static/service-worker.js`
