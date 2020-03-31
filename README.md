@@ -192,7 +192,7 @@ app.use(compression())
 <br>
 
 **6. Added Service Worker**
-For more details about my Service Worker go to: [Service Worker](#Service-Worker)
+For more details about my Service Worker go to: [What is a Service Worker?](#What-is-a-Service-Worker?)
 <details><summary>Audit screenshot</summary>
 	
 <img src="https://user-images.githubusercontent.com/45365598/78018369-0fec2900-734e-11ea-8f5d-27220dd8b22a.png">
