@@ -41,7 +41,7 @@ I made a webapp where you can explore movies and series. The user can navigate t
 * [What is a Service Worker?](#What-is-a-Service-Worker?) -->
 
 ### What is a Progressive Web Application?
-> "Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver native-like capabilities, reliability, and installability while reaching anyone, anywhere, on any device with a single codebase."
+> "Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver native-like capabilities, reliability, and installability while reaching anyone, anywhere, on any device with a single codebase."  
 Source: https://web.dev/what-are-pwas/
 
 ### What is a Manifest.json?
@@ -106,7 +106,6 @@ Source: https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_render
 **How**  
 By optimizing the Critical Render Path the perfomance of you webapplication improves. You can achieve this by:  
 Minimize the filesize of critical files and optimize the order by prioritizing the files when they need to be called/loaded.
-
 
 ### Performance Enhancements
 `Perceived Load Speed`  
@@ -204,6 +203,89 @@ For this project I used `the Movie Database API` which is a really big and good 
 * Movies
 * TV episodes
 * Reviews  
+
+<details><summary>Example data structure:</summary>
+
+```json
+{
+  "adult": false,
+  "backdrop_path": "/8HqSxB9VLJkbRXRdlocbLq9wxwY.jpg",
+  "belongs_to_collection": {
+    "id": 141290,
+    "name": "The Lord of the Rings Animated Collection",
+    "poster_path": "/pQuazFOlGRdn2Lb3oWFJYPeASOc.jpg",
+    "backdrop_path": "/uUG532EWfyhtKDzsA0sLb1PsHhL.jpg"
+  },
+  "budget": 4000000,
+  "genres": [
+    {
+      "id": 12,
+      "name": "Adventure"
+    },
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 18,
+      "name": "Drama"
+    },
+    {
+      "id": 14,
+      "name": "Fantasy"
+    },
+    {
+      "id": 10751,
+      "name": "Family"
+    }
+  ],
+  "homepage": "",
+  "id": 123,
+  "imdb_id": "tt0077869",
+  "original_language": "en",
+  "original_title": "The Lord of the Rings",
+  "overview": "The Fellowship of the Ring embark on a journey to destroy the One Ring and end Sauron's reign over Middle-earth.",
+  "popularity": 10.44,
+  "poster_path": "/1l3WpoF7TX9pOprX4XepCXjQXUV.jpg",
+  "production_companies": [
+    {
+      "id": 60,
+      "logo_path": "/oJXpAs4I3W46e4dkaOEzCa4yBko.png",
+      "name": "United Artists",
+      "origin_country": "US"
+    },
+    {
+      "id": 286,
+      "logo_path": null,
+      "name": "Fantasy Films",
+      "origin_country": ""
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "1978-11-15",
+  "revenue": 30471420,
+  "runtime": 132,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Fantasy...beyond your imagination",
+  "title": "The Lord of the Rings",
+  "video": false,
+  "vote_average": 6.5,
+  "vote_count": 415
+}
+```
+
+</details>
 
 This API has a developer website where you can try out different types of calls to the API where you get a result immediately. This way you can check if that request get's you the data that you want.
 
