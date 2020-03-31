@@ -11,6 +11,7 @@
     * [What is a 'Critical Rendering Path'?](#What-is-a-'Critical-Rendering-Path'?)
     * [Performance Enhancements](#Performance-Enhancements)
 * [API](#API)
+* [Conclusion](#Conclusion)
 * [Install notes](#Install-notes)
 * [Credits](#Credits)
 <!-- * [Learnings during this course](#Learnings-during-this-course) -->
@@ -290,6 +291,26 @@ For this project I used `the Movie Database API` which is a really big and good 
 This API has a developer website where you can try out different types of calls to the API where you get a result immediately. This way you can check if that request get's you the data that you want.
 
 `!IMPORTANT | You need a account to get a API key`
+
+<hr>
+
+## Conclusion
+**Leerdoelen**
+> "Je snapt het verschil tussen client side en server side renderen en kan server side rendering toepassen voor het tonen van data uit een API"
+
+By rendering my webapp server side I've managed to create a webapp which works perfectly fine without any Javascript. I also put some time in making the app responsive.
+
+<br>
+
+> "Je begrijpt hoe een Service Worker werkt en kan deze in jouw applicatie op een nuttige wijze implementeren."
+
+My service worker caches all the core assets of my webapp and can ben served to the user. I've also implemented a way that the user can go to a page, which is not in the cache, and get's a message that he's offline.
+
+<br>
+
+> "Je begrijpt hoe de critical render path werkt, en hoe je deze kan optimaliseren"
+
+To optimize the critical render path I've done a few methods of compressing and compiling. Which results in a fast first view. I also paid attention to retrieve important files in order to improve the web app. Because my webapp doesn't have any client side Javascript the Time to Interaction is the same as First View.
 
 <hr>
 
