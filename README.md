@@ -42,7 +42,6 @@ I made a webapp where you can explore movies and series. The user can navigate t
 
 ### What is a Progressive Web Application?
 > "Progressive Web Apps (PWA) are built and enhanced with modern APIs to deliver native-like capabilities, reliability, and installability while reaching anyone, anywhere, on any device with a single codebase."
-<br>
 Source: https://web.dev/what-are-pwas/
 
 ### What is a Manifest.json?
@@ -102,7 +101,6 @@ else if (event.request.headers.get('accept').indexOf('text/html') > -1)) {
 ### What is a 'Critical Rendering Path'?
 **What**  
 > "The Critical Rendering Path is the sequence of steps the browser goes through to convert the HTML, CSS, and JavaScript into pixels on the screen. The critical rendering path includes the Document Object Model (DOM), CSS Object Model (CSSOM), render tree and layout."  
-<br>
 Source: https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path
 
 **How**  
