@@ -45,14 +45,10 @@ I made a webapp where you can explore movies and series. The user can navigate t
 <br>
 Source: https://web.dev/what-are-pwas/
 
-<br>
-
 ### What is a Manifest.json?
 Recently Chrome added a support for 'installing web apps to homescreen'. This way you could add a website to your homescreen and go to that website like it's an app.
 
 To let the browser know that's a installable app you've to write a manifest.json file. The file contains all kinds of properties like the name, the icons, start url and a theme color. This way you can 'customize' how the 'app' will look.
-
-<br>
 
 ### What is a Service Worker?
 A Service Worker is a type of `web worker`. It's a Javascript file which runs seperate from the browser. It's a proxy that let's you control how requests on the page are handled.
@@ -113,7 +109,6 @@ Source: https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_render
 By optimizing the Critical Render Path the perfomance of you webapplication improves. You can achieve this by:  
 Minimize the filesize of critical files and optimize the order by prioritizing the files when they need to be called/loaded.
 
-<br>
 
 ### Performance Enhancements
 `Perceived Load Speed`  
@@ -206,18 +201,13 @@ For more details about my Service Worker go to: [Service Worker](#Service-Worker
 
 <hr>
 
-## Service Worker
-
-
-<hr>
-
 ## API
 For this project I used `the Movie Database API` which is a really big and good structured database. It has data about:
 * Movies
 * TV episodes
 * Reviews  
 
-You can retreive the data by all different parameters which you can test at their website.
+This API has a developer website where you can try out different types of calls to the API where you get a result immediately. This way you can check if that request get's you the data that you want.
 
 `!IMPORTANT | You need a account to get a API key`
 
